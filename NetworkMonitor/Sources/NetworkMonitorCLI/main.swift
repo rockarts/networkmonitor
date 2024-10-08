@@ -7,7 +7,8 @@ Task {
 }
 
 let url = URL(string: "https://api.thedogapi.com/v1/images/search")!
-let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+let request = URLRequest(url: url)
+let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
     if let error = error {
         print("Main completion handler - Error: \(error.localizedDescription)")
     } else if let data = data {
